@@ -1,26 +1,121 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* --- MODE CLAIR --- */
+  --background: #f8faff;       /* Un blanc très légèrement bleuté pour rester pro */
+  --foreground: #0f172a;       /* Slate 900 pour un texte sombre doux */
+  
+  --card: #ffffff;
+  --card-border: #e2e8f0;      /* Slate 200 */
+  
+  /* Ton Bleu Pur Électrique */
+  --primary: #0052ff;
+  --primary-hover: #0041cc;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* --- MODE SOMBRE RAFFINÉ --- */
+    --background: #0b0f19;
+    --foreground: #f1f5f9;
+    --card: #131b2e;
+    --card-border: #1e293b;
+    --primary: #0052ff;
+    --primary-hover: #1a63ff;
   }
 }
 
+/* Thème forcé manuellement — priorité sur la préférence système */
+html.dark {
+  --background: #0b0f19;
+  --foreground: #f1f5f9;
+  --card: #131b2e;
+  --card-border: #1e293b;
+  --primary: #0052ff;
+  --primary-hover: #1a63ff;
+}
+
+html.light {
+  --background: #f8faff;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-border: #e2e8f0;
+  --primary: #0052ff;
+  --primary-hover: #0041cc;
+}
+
+@theme inline {
+  /* Mapping des variables CSS dans le système de design Tailwind v4 */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-card: var(--card);
+  --color-card-border: var(--card-border);
+  
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  
+  /* Polices professionnelles (Geist ou Inter) */
+  --font-sans: var(--font-geist-sans), "Inter", system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
+/* --- STYLES DE BASE RÉUTILISABLES --- */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* Focus visible accessible (clavier) */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Utilitaires personnalisés pour ton effet "Lead Design" */
+.glass-effect {
+  backdrop-filter: blur(12px);
+  background-color: rgb(from var(--background) r g b / 70%);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.bento-card {
+  background-color: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.bento-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -15px rgb(from var(--primary) r g b / 20%);
+}
+
+/* Compense la navbar fixe (~68px) lors d'un saut vers une ancre */
+[id] {
+  scroll-margin-top: 80px;
+}
+
+/* ── Scroll animations ────────────────────────────────────────── */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity  0.65s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-animate.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
