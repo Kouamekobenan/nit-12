@@ -38,11 +38,11 @@ const steps = [
 export default function Process() {
   return (
     /* id="services" corrige le lien #services de la navbar */
-    <section id="services" className="py-24 md:py-32 border-t border-card-border">
+    <section id="services" className="py-12 md:py-32 border-t border-card-border">
       <div className="mx-auto max-w-7xl px-6">
 
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-10 md:mb-20">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
             Notre Méthode
           </p>
@@ -55,7 +55,7 @@ export default function Process() {
         </div>
 
         {/* Steps grid */}
-        <div className="relative grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-6">
+        <div className="relative grid grid-cols-1 gap-8 md:grid-cols-4 md:gap-6">
 
           {/* Connecting line — desktop */}
           <div className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-card-border" />

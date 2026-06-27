@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-
 const faqs = [
   {
     q: "Est-ce que vos solutions fonctionnent sans connexion internet ?",
@@ -39,7 +38,7 @@ export default function FAQ() {
             FAQ
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-5xl">
-            Vos questions,{' '}
+            Vos questions,
             <span className="text-foreground/40">nos réponses</span>
           </h2>
         </div>

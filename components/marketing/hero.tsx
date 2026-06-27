@@ -63,7 +63,6 @@ export default function Hero() {
             className="absolute inset-0 z-10 lg:hidden"
             style={{ background: 'linear-gradient(to bottom, transparent 60%, var(--background) 100%)' }}
           />
-
           {/* Blue orb — top left */}
           <div
             className="absolute top-28 left-6 z-20 h-20 w-20 rounded-full"
@@ -96,7 +95,7 @@ export default function Hero() {
         </div>
 
         {/* ── COL 2 · Services ────────────────────────────────────── */}
-        <div className="flex flex-col justify-center px-8 py-24 border-x border-card-border/40">
+        <div className="flex flex-col justify-center px-8 py-8 lg:py-24 lg:border-x border-card-border/40">
 
           {/* Badge */}
           <span className="mb-5 self-start rounded bg-primary px-3 py-1.5 text-[10px] font-black uppercase tracking-widest text-white">
@@ -120,7 +119,7 @@ export default function Hero() {
         </div>
 
         {/* ── COL 3 · Headline + CTAs ─────────────────────────────── */}
-        <div className="flex flex-col justify-between px-10 py-20">
+        <div className="flex flex-col justify-between px-8 lg:px-10 py-8 lg:py-20">
 
           {/* Social links — top right */}
           <div className="flex flex-col items-end gap-3">

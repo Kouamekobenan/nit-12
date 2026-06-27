@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 /* ── Remplace par ton domaine définitif quand il sera prêt ─────── */
-const SITE_URL = "https://n12-it.ci";
+const SITE_URL = "https://n12-it.netlify.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
