@@ -73,6 +73,9 @@ export default function Footer() {
               Ingénierie logicielle et solutions informatiques pour les PME et
               commerces de Côte d&apos;Ivoire.
             </p>
+            <p className="text-xs font-bold tracking-widest text-primary uppercase">
+              Code. Engagement. Résultat.
+            </p>
             <div className="flex flex-col gap-2.5">
               <a
                 href="tel:+2250506832678"

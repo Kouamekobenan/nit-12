@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | N12-IT",
   },
   description:
-    "Conception de logiciels sur-mesure, applications métiers et solutions numériques pour les PME et commerces de Côte d'Ivoire. NoBoutik, StockPro, TicketPass.",
+    "Code. Engagement. Résultat. — Conception de logiciels sur-mesure, applications métiers et solutions numériques pour les PME et commerces de Côte d'Ivoire. NoBoutik, StockPro, TicketPass.",
   keywords: [
     "ingénierie logicielle",
     "Côte d'Ivoire",
